@@ -41,6 +41,7 @@ const options = {
       '2022-04-18T00:00:00.000Z',
       '2022-04-19T00:00:00.000Z',
       '2022-04-20T00:00:00.000Z',
+      '2022-04-21T00:00:00.000Z',
     ],
   },
   fill: {
@@ -54,7 +55,9 @@ const options = {
   },
 };
 
-const series = [{ name: 'series1', data: [31, 120, 34, 120, 43, 400] }];
+const series = [
+  { name: 'series1', data: [30, 120, 45, 170, 100, 200, 232, 198] },
+];
 
 const Dashboard = () => {
   return (
