@@ -13,7 +13,7 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react';
-import { Header, Sidebar } from 'components';
+import { Header, Sidebar, Pagination } from 'components';
 import { RiAddLine, RiPencilFill } from 'react-icons/ri';
 
 const UserList = () => {
@@ -82,6 +82,7 @@ const UserList = () => {
               </Tr>
             </Tbody>
           </Table>
+          <Pagination />
         </Box>
       </Flex>
     </Box>
