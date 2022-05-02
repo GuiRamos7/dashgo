@@ -9,7 +9,7 @@ const PaginationItem = ({ isCurrent = false, number }: PaginationItemProps) => {
   if (isCurrent) {
     return <Button
       size='sm'
-      fontSize='xs'
+      fontSize={['2xl', '3xl']}
       width='4'
       colorScheme='pink'
       disabled
