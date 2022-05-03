@@ -9,7 +9,7 @@ import {
   VStack,
 } from '@chakra-ui/react';
 import { Header, Sidebar, Input } from 'components';
-import { RiAddLine, RiPencilFill } from 'react-icons/ri';
+import Link from 'next/link';
 
 const CreateUser = () => {
   return (
@@ -43,7 +43,9 @@ const CreateUser = () => {
 
           <Flex mt='8' justify='flex-end'>
             <HStack spacing='4'>
-              <Button colorScheme='whiteAlpha'>Cancel</Button>
+              <Link href="/users" passHref >
+                <Button colorScheme='whiteAlpha'>Cancel</Button>
+              </Link>
               <Button colorScheme='pink'>Save</Button>
             </HStack>
           </Flex>

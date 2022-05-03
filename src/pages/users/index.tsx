@@ -14,6 +14,7 @@ import {
   Tr,
 } from '@chakra-ui/react';
 import { Header, Sidebar, Pagination } from 'components';
+import Link from 'next/link';
 import { RiAddLine, RiPencilFill } from 'react-icons/ri';
 
 const UserList = () => {
@@ -29,17 +30,21 @@ const UserList = () => {
             <Heading size='lg' fontWeight='normal'>
               Users
             </Heading>
-            <Button
-              as='a'
-              size='sm'
-              fontSize='small'
-              cursor='pointer'
-              colorScheme='pink'
-              alignItems='center'
-              leftIcon={<Icon as={RiAddLine} fontSize='20' />}
-            >
-              Create new
-            </Button>
+
+            <Link href="/users/create" passHref>
+
+              <Button
+                as='a'
+                size='sm'
+                fontSize='small'
+                cursor='pointer'
+                colorScheme='pink'
+                alignItems='center'
+                leftIcon={<Icon as={RiAddLine} fontSize='20' />}
+              >
+                Create new
+              </Button>
+            </Link>
           </Flex>
           <Box w="100%" overflowX="auto" >
             <Table colorScheme='whiteAlpha'>
@@ -84,7 +89,6 @@ const UserList = () => {
               </Tbody>
             </Table>
           </Box>
-
           <Pagination />
         </Box>
       </Flex >

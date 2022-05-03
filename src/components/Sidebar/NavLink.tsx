@@ -1,18 +1,22 @@
-import { Box, Text, Icon, Link, LinkProps as ChakaraLinkProps } from "@chakra-ui/react"
+import { Text, Icon, Link as ChakraLink, LinkProps as ChakaraLinkProps } from "@chakra-ui/react"
+import Link from 'next/link'
 import { ElementType } from "react"
-import { RiInputMethodLine, RiGitMergeLine } from "react-icons/ri"
 
 interface NavLinkProps extends ChakaraLinkProps {
   icon: ElementType,
-  children: string
+  children: string,
+  href: string
 }
 
-const NavLink = ({ children, icon, ...rest }: NavLinkProps) => {
-  return <Link display='flex' alignItems='center' {...rest}>
-    <Icon as={icon} fontSize='20' />
-    <Text ml='4' fontWeight='normal'>
-      {children}
-    </Text>
+const NavLink = ({ children, icon, href, ...rest }: NavLinkProps) => {
+  return <Link passHref href={href} >
+    <ChakraLink display='flex' alignItems='center' {...rest}>
+      <Icon as={icon} fontSize='20' />
+      <Text ml='4' fontWeight='normal'>
+        {children}
+      </Text>
+    </ChakraLink>
+
   </Link>
 }
 

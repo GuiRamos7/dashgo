@@ -7,20 +7,20 @@ const SidebarNav = () => {
   return <Stack spacing='12' align='flex-start'>
     <NavSection title='GENERAL'>
       <Box>
-        <NavLink icon={RiDashboardLine} >
+        <NavLink href="/dashboard" icon={RiDashboardLine} >
           Dashboard
         </NavLink>
-        <NavLink icon={RiContactsLine} >
+        <NavLink href="/users" icon={RiContactsLine} >
           Users
         </NavLink>
       </Box>
     </NavSection>
     <NavSection title='AUTOMATION'>
       <Box>
-        <NavLink icon={RiInputMethodLine} >
+        <NavLink href="/forms" icon={RiInputMethodLine} >
           Forms
         </NavLink>
-        <NavLink icon={RiGitMergeLine} >
+        <NavLink href="/automation" icon={RiGitMergeLine} >
           Automation
         </NavLink>
       </Box>
