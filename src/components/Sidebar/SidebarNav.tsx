@@ -10,6 +10,8 @@ const SidebarNav = () => {
         <NavLink href="/dashboard" icon={RiDashboardLine} >
           Dashboard
         </NavLink>
+      </Box>
+      <Box>
         <NavLink href="/users" icon={RiContactsLine} >
           Users
         </NavLink>
@@ -20,6 +22,8 @@ const SidebarNav = () => {
         <NavLink href="/forms" icon={RiInputMethodLine} >
           Forms
         </NavLink>
+      </Box>
+      <Box>
         <NavLink href="/automation" icon={RiGitMergeLine} >
           Automation
         </NavLink>
