@@ -41,7 +41,7 @@ const UserList = () => {
               Create new
             </Button>
           </Flex>
-          <Box w="100%" overflowX="scroll" >
+          <Box w="100%" overflowX="auto" >
             <Table colorScheme='whiteAlpha'>
               <Thead>
                 <Tr>
