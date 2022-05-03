@@ -11,7 +11,7 @@ const Sidebar = () => {
   const isDrawerSidebar = useBreakpointValue({
     base: true,
     lg: false
-  })
+  }, [])
 
   if (isDrawerSidebar) {
     return <Drawer isOpen={isOpen} placement='left' onClose={onClose}>
