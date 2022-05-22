@@ -27,7 +27,6 @@ const Home = () => {
     console.log(data)
   }
 
-  { console.log(errors) }
 
 
   return (
