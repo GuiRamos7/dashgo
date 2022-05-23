@@ -15,24 +15,30 @@ import {
 } from '@chakra-ui/react';
 import { Header, Sidebar, Pagination } from 'components';
 import Link from 'next/link';
+import { useEffect } from 'react';
 import { RiAddLine, RiPencilFill } from 'react-icons/ri';
 
 const UserList = () => {
+  useEffect(() => {
+    fetch('http://localhost:3000/api/users')
+      .then((response) => response.json())
+      .then((data) => console.log(data));
+  }, []);
+
   return (
-    <Box >
+    <Box>
       <Header />
 
       <Flex w='100%' my='6' maxWidth={1480} mx='auto' px='6'>
         <Sidebar />
 
-        <Box w="100%" flex='1' bg='gray.800' borderRadius={8} p='8'>
+        <Box w='100%' flex='1' bg='gray.800' borderRadius={8} p='8'>
           <Flex mb='8' justify='space-between' align='center'>
             <Heading size='lg' fontWeight='normal'>
               Users
             </Heading>
 
-            <Link href="/users/create" passHref>
-
+            <Link href='/users/create' passHref>
               <Button
                 as='a'
                 size='sm'
@@ -46,7 +52,7 @@ const UserList = () => {
               </Button>
             </Link>
           </Flex>
-          <Box w="100%" overflowX="auto" >
+          <Box w='100%' overflowX='auto'>
             <Table colorScheme='whiteAlpha'>
               <Thead>
                 <Tr>
@@ -91,8 +97,8 @@ const UserList = () => {
           </Box>
           <Pagination />
         </Box>
-      </Flex >
-    </Box >
+      </Flex>
+    </Box>
   );
 };
 
