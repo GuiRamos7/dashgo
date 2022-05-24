@@ -36,7 +36,7 @@ export const makeServer = () => {
       this.timing = 750;
 
       this.get('/users', function (schema, req) {
-        const { page = 1, per_page = 10 } = req.params;
+        const { page = 1, per_page = 10 } = req.queryParams;
 
         const total = schema.all('user').length;
 
@@ -56,6 +56,7 @@ export const makeServer = () => {
           { users }
         );
       });
+
       this.post('/users');
 
       this.namespace = '';

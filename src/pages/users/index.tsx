@@ -16,12 +16,13 @@ import {
 } from '@chakra-ui/react';
 import { Header, Sidebar, Pagination } from 'components';
 import Link from 'next/link';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { RiAddLine, RiPencilFill } from 'react-icons/ri';
 import { useUsers } from 'services/hooks/useUsers';
 
 const UserList = () => {
-  const { data, isLoading, error, isFetching } = useUsers();
+  const [page, setPage] = useState(1);
+  const { data, isLoading, error, isFetching } = useUsers(page);
 
   useEffect(() => {}, []);
 
@@ -78,7 +79,7 @@ const UserList = () => {
                     </Tr>
                   </Thead>
                   <Tbody>
-                    {data.map((user) => (
+                    {data.users.map((user) => (
                       <Tr key={user.id}>
                         <Td px='6'>
                           <Checkbox colorScheme='pink' />
@@ -111,9 +112,9 @@ const UserList = () => {
                 </Table>
               </Box>
               <Pagination
-                totalCountOfRegisters={200}
-                currentPage={5}
-                onPageChange={() => {}}
+                totalCountOfRegisters={data.totalCount}
+                currentPage={page}
+                onPageChange={setPage}
               />
             </>
           )}
