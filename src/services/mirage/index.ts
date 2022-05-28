@@ -38,7 +38,7 @@ export const makeServer = () => {
     },
 
     seeds(server) {
-      server.createList('user', 2);
+      server.createList('user', 77);
     },
 
     routes() {
@@ -53,10 +53,11 @@ export const makeServer = () => {
         const pageStart = (Number(page) - 1) * Number(per_page);
         const pageEnd = pageStart + Number(per_page);
 
-        const users = this.serialize(schema.all('user')).users.slice(
-          pageStart,
-          pageEnd
-        );
+        const users = this.serialize(schema.all('user'))
+          .users.sort((a, b) => {
+            return a.created_at.getTime() - b.created_at.getTime();
+          })
+          .slice(pageStart, pageEnd);
 
         return new Response(
           200,
